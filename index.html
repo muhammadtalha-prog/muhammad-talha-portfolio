@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Talha | Edge AI, DSP & AI Agent Developer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Muhammad Talha - ML Engineer specializing in Real-Time SWaP-constrained Edge AI (YOLO11), Embedded C++ Signal Processing, Baseband Simulation, and Autonomous AI Agent systems.">
+    <meta name="keywords" content="Muhammad Talha, ML Engineer, Edge AI, Embedded C++, DSP, Baseband, Signal Processing, AI Agents, YOLO11, IRSTD, Python, MATLAB">
+    <meta name="author" content="Muhammad Talha">
+    
+    <!-- Open Graph Metadata (Social Sharing) -->
+    <meta property="og:title" content="Muhammad Talha | Edge AI & Embedded Developer Portfolio">
+    <meta property="og:description" content="Explore advanced research in IRSTD optimization, C++ signal processing, and multi-API chatbot agents.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts & Icon Libraries -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Loading Screen Overlay -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Initializing 3D Universe</div>
+    </div>
+
+    <!-- Background 3D Canvas Container -->
+    <div id="canvas-container"></div>
+
+    <!-- Navigation Header -->
+    <header id="nav-header">
+        <div class="container nav-container">
+            <a href="#" class="logo" id="nav-logo">
+                <i class="fa-solid fa-microchip"></i> TALHA<span>.IO</span>
+            </a>
+            
+            <button class="mobile-nav-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="nav-links-list">
+                <li><a href="#hero" class="nav-link active" id="link-home">Home</a></li>
+                <li><a href="#about" class="nav-link" id="link-about">About</a></li>
+                <li><a href="#skills" class="nav-link" id="link-skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" id="link-projects">Projects</a></li>
+                <li><a href="#simulation" class="nav-link" id="link-sim">Signal Lab</a></li>
+                <li><a href="#timeline" class="nav-link" id="link-timeline">Journey</a></li>
+                <li><a href="#contact" class="nav-link" id="link-contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Sections -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="accent-text" id="hero-tagline">Edge Hardware & Signal Specialist</span>
+                    <h1 class="hero-title" id="main-name-title">Muhammad<br><span class="gradient-text">Talha</span></h1>
+                    <h2 class="hero-subtitle" id="main-profession-subtitle">ML Engineer & Embedded Systems Developer</h2>
+                    <p class="hero-description" id="hero-pitch">
+                        Bridging high-performance Edge AI models (IRSTD/YOLO11) with classical 1D Digital Signal Processing (DSP) in C++ and Python. Specialized in building autonomous AI Agents and low-latency fixed-point math algorithms.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary" id="btn-explore-projects">Explore Projects</a>
+                        <a href="#contact" class="btn btn-secondary" id="btn-contact-hero">Get In Touch</a>
+                    </div>
+                    
+                    <!-- Performance metrics stats grid -->
+                    <div class="hero-stats" id="stats-dashboard">
+                        <div class="stat-item" id="stat-latency">
+                            <h3>11.84<span>ms</span></h3>
+                            <p>Edge Latency</p>
+                        </div>
+                        <div class="stat-item" id="stat-fps">
+                            <h3>84.4<span>FPS</span></h3>
+                            <p>Real-Time Detection</p>
+                        </div>
+                        <div class="stat-item" id="stat-map">
+                            <h3>88.9<span>%</span></h3>
+                            <p>YOLO11 mAP</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Floating decorative glass card -->
+                <div class="hero-visual glass-card" id="interactive-floating-card">
+                    <div class="card-glow-layer"></div>
+                    <i class="fa-solid fa-wave-square" style="font-size: 3rem; color: var(--primary); margin-bottom: 1.5rem;"></i>
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Signal Processing Lab</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                        Interactive digital modulator simulating BPSK, QPSK, and Frequency Modulation (FM) on-the-fly.
+                    </p>
+                    <a href="#simulation" class="btn btn-secondary" style="width: 100%; padding: 0.6rem 0;" id="btn-goto-sim">Launch Visualizer</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <span class="accent-text" id="about-tag">Background</span>
+                    <h2 class="section-title" id="about-title">Systems & Signals</h2>
+                    <p>
+                        I am an ML Engineer with a BS in Computer Science, focusing on physical computing, real-time optimization, and signal processing. My core research concentrates on optimizing <strong>Infrared Small Target Detection (IRSTD)</strong> using YOLO11-Nano for SWaP-constrained military edge hardware.
+                    </p>
+                    <p>
+                        By combining deep learning structures like spatial attention (C2PSA) with classical DSP techniques (CFAR thresholds, fixed-point math conversions), I build algorithms that operate inside highly constrained FPGA, DSP, and ARM chip memory envelopes.
+                    </p>
+                    <p>
+                        Additionally, I design and orchestrate **Autonomous AI Agents** (Streamlit toolbars, document summarizers, and cross-platform extensions) that streamline communication and process text metrics.
+                    </p>
+                    
+                    <div class="info-details" id="personal-info-grid">
+                        <div class="info-item" id="info-location">
+                            <span>Location</span>
+                            <span>Sargodha, Pakistan</span>
+                        </div>
+                        <div class="info-item" id="info-email">
+                            <span>Email</span>
+                            <span>talhamazhar1711@gmail.com</span>
+                        </div>
+                        <div class="info-item" id="info-phone">
+                            <span>Phone</span>
+                            <span>+92 336 7508375</span>
+                        </div>
+                        <div class="info-item" id="info-degree">
+                            <span>Degree</span>
+                            <span>BS Computer Science</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Interactive Skills Showcase -->
+                <div class="about-visual glass-card" id="about-cv-card">
+                    <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <i class="fa-solid fa-code" style="color: var(--primary);"></i> Research Focus
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="border-left: 2px solid var(--primary); padding-left: 1rem;">
+                            <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.25rem;">Real-Time IRSTD Optimization</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85rem;">Designing C3k2 and C2PSA structures for military-grade edge deployments, compressing files down to 10.2 MB ONNX binaries.</p>
+                        </div>
+                        <div style="border-left: 2px solid var(--secondary); padding-left: 1rem;">
+                            <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.25rem;">Fixed-Point C++ Core</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85rem;">Converting floating-point MATLAB filters into bit-true fixed-point C++ code for low-overhead embedded execution.</p>
+                        </div>
+                        <div style="border-left: 2px solid var(--accent); padding-left: 1rem;">
+                            <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.25rem;">Context Bridges & AI Agents</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85rem;">Engineering Chrome Extensions and Python services to bridge conversation contexts across LLM platforms dynamically.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <span class="accent-text" id="skills-tag">Tech Stack</span>
+                <h2 class="section-title" id="skills-title">Technical Expertise</h2>
+                <p class="section-subtitle" id="skills-subtitle">
+                    Demonstrable proficiency across programming languages, hardware optimization pipelines, and signal simulation tools.
+                </p>
+                
+                <div class="skills-grid" id="skills-matrix">
+                    <!-- Programming languages -->
+                    <div class="skills-card glass-card" id="card-prog-skills">
+                        <h3>Languages <i class="fa-solid fa-terminal"></i></h3>
+                        <div class="skill-list">
+                            <div>
+                                <div class="skill-label"><span>Python (PyTorch, CV)</span><span class="skill-percent">90%</span></div>
+                                <div class="skill-progress-bar"><div class="skill-progress" data-progress="90"></div></div>
+                            </div>
+                            <div>
+                                <div class="skill-label"><span>C++ (OOP, CLI Systems)</span><span class="skill-percent">85%</span></div>
+                                <div class="skill-progress-bar"><div class="skill-progress" data-progress="85"></div></div>
+                            </div>
+                            <div>
+                                <div class="skill-label"><span>MATLAB (Signal Toolbox)</span><span class="skill-percent">80%</span></div>
+                                <div class="skill-progress-bar"><div class="skill-progress" data-progress="80"></div></div>
+                            </div>
+                            <div>
+                                <div class="skill-label"><span>JavaScript (HTML5 / DOM)</span><span class="skill-percent">75%</span></div>
+                                <div class="skill-progress-bar"><div class="skill-progress" data-progress="75"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Edge AI & Deep Learning -->
+                    <div class="skills-card glass-card" id="card-edge-skills">
+                        <h3>Edge AI & ML <i class="fa-solid fa-brain"></i></h3>
+                        <div class="skill-list">
+                            <div>
+                                <div class="skill-label"><span>YOLO11 Model Design</span><span class="skill-percent">92%</span></div>
+                                <div class="skill-progress-bar"><div class="skill-progress" data-progress="92"></div></div>
+                            </div>
+                            <div>
+                                <div class="skill-label"><span>ONNX Runtime & Quantization</span><span class="skill-percent">88%</span></div>
+                                <div class="skill-progress-bar"><div class="skill-progress" data-progress="88"></div></div>
+                            </div>
+                            <div>
+                                <div class="skill-label"><span>Computer Vision (OpenCV)</span><span class="skill-percent">85%</span></div>
+                                <div class="skill-progress-bar"><div class="skill-progress" data-progress="85"></div></div>
+                            </div>
+                            <div>
+                                <div class="skill-label"><span>SWaP Hardware Optimizations</span><span class="skill-percent">80%</span></div>
+                                <div class="skill-progress-bar"><div class="skill-progress" data-progress="80"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Embedded & DSP -->
+                    <div class="skills-card glass-card" id="card-dsp-skills">
+                        <h3>Embedded & DSP <i class="fa-solid fa-sliders"></i></h3>
+                        <div class="skill-list">
+                            <div>
+                                <div class="skill-label"><span>Fixed-Point Math & Conversion</span><span class="skill-percent">82%</span></div>
+                                <div class="skill-progress-bar"><div class="skill-progress" data-progress="82"></div></div>
+                            </div>
+                            <div>
+                                <div class="skill-label"><span>Digital Filtering (FIR, IIR)</span><span class="skill-percent">78%</span></div>
+                                <div class="skill-progress-bar"><div class="skill-progress" data-progress="78"></div></div>
+                            </div>
+                            <div>
+                                <div class="skill-label"><span>Baseband Modulation (QPSK, FM)</span><span class="skill-percent">80%</span></div>
+                                <div class="skill-progress-bar"><div class="skill-progress" data-progress="80"></div></div>
+                            </div>
+                            <div>
+                                <div class="skill-label"><span>CFAR Threshold Algorithms</span><span class="skill-percent">85%</span></div>
+                                <div class="skill-progress-bar"><div class="skill-progress" data-progress="85"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <span class="accent-text" id="projects-tag">Portfolio</span>
+                <h2 class="section-title" id="projects-title">Featured Projects</h2>
+                <p class="section-subtitle" id="projects-subtitle">
+                    Select a filter below to explore hardware implementations, digital agent architectures, and signal prototypes.
+                </p>
+
+                <!-- Project Filters -->
+                <div class="project-filter" id="project-filters-bar">
+                    <button class="filter-btn active" data-filter="all" id="filter-all">Show All</button>
+                    <button class="filter-btn" data-filter="edge" id="filter-edge">Edge AI & ML</button>
+                    <button class="filter-btn" data-filter="dsp" id="filter-dsp">Baseband & DSP</button>
+                    <button class="filter-btn" data-filter="agents" id="filter-agents">Autonomous AI Agents</button>
+                </div>
+
+                <div class="projects-grid" id="projects-showcase-grid">
+                    
+                    <!-- Project 1: IRSTD -->
+                    <div class="project-card-container" data-category="edge" id="project-irstd-container">
+                        <div class="glass-card project-card">
+                            <div class="project-meta">
+                                <span>Real-Time Edge</span>
+                                <span>Research Project</span>
+                            </div>
+                            <h3 class="project-title" id="p-irstd-title">SWaP-Optimized IRSTD</h3>
+                            <p class="project-desc">
+                                Reconstructed YOLO11-Nano with spatial C3k2 and C2PSA attention layers to detect faint signals in heavy visual noise. Achieved 88.9 mAP and 84.4 FPS on resource-constrained FPGAs/DSPs, packaging it into a 10.2 MB ONNX model.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">YOLO11</span>
+                                <span class="project-tag">ONNX</span>
+                                <span class="project-tag">Attention</span>
+                                <span class="project-tag">Hardware Optimization</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/phase1-matlab/" class="project-link" id="p-irstd-code-link"><i class="fa-brands fa-github"></i> View Matlab Adaptation</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Context Bridge -->
+                    <div class="project-card-container" data-category="agents" id="project-bridge-container">
+                        <div class="glass-card project-card">
+                            <div class="project-meta">
+                                <span>Browser Extension</span>
+                                <span>Core Agentic</span>
+                            </div>
+                            <h3 class="project-title" id="p-bridge-title">Context Bridge Browser Ext.</h3>
+                            <p class="project-desc">
+                                A browser extension that hooks into ChatGPT, Gemini, and DeepSeek, captures the contextual history, summarizes it, and maps it to a unified prompt payload. Permits seamless workspace handover between LLM providers.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">Chrome Extension</span>
+                                <span class="project-tag">API Hooking</span>
+                                <span class="project-tag">Text Processing</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com" class="project-link" id="p-bridge-ext-link" target="_blank"><i class="fa-solid fa-globe"></i> Repository</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: QPSK Link -->
+                    <div class="project-card-container" data-category="dsp" id="project-qpsk-container">
+                        <div class="glass-card project-card">
+                            <div class="project-meta">
+                                <span>Baseband Simulation</span>
+                                <span>MATLAB Code</span>
+                            </div>
+                            <h3 class="project-title" id="p-qpsk-title">QPSK Transceiver Model</h3>
+                            <p class="project-desc">
+                                Formulated an end-to-end Quadrature Phase Shift Keying transceiver model in MATLAB. Includes root-raised cosine (RRC) pulse shaping, AWGN channel distortion, symbol timing loops (Gardner), and Costas Loop synchronization.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">MATLAB</span>
+                                <span class="project-tag">QPSK</span>
+                                <span class="project-tag">Costas Loop</span>
+                                <span class="project-tag">Symbol Synchronization</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/phase1-matlab/" class="project-link" id="p-qpsk-code-link"><i class="fa-solid fa-code"></i> Source Files</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Fixed-Point FIR -->
+                    <div class="project-card-container" data-category="dsp" id="project-fir-container">
+                        <div class="glass-card project-card">
+                            <div class="project-meta">
+                                <span>Embedded C++</span>
+                                <span>Signal Core</span>
+                            </div>
+                            <h3 class="project-title" id="p-fir-title">Fixed-Point C++ FIR Filter</h3>
+                            <p class="project-desc">
+                                Engineered a templated C++ FIR filter class designed for DSP targets. Implemented 16-bit coefficient scaling and 32-bit accumulator shifting to prevent overflow, with bit-true matching verified against double precision prototypes.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">C++11</span>
+                                <span class="project-tag">Fixed-Point Math</span>
+                                <span class="project-tag">Digital Filtering</span>
+                                <span class="project-tag">Test Bench</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/phase2-cpp/" class="project-link" id="p-fir-code-link"><i class="fa-solid fa-file-code"></i> C++ Header & TB</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Streamlit Chatbots -->
+                    <div class="project-card-container" data-category="agents" id="project-streamlit-container">
+                        <div class="glass-card project-card">
+                            <div class="project-meta">
+                                <span>Agent Dev</span>
+                                <span>Python App</span>
+                            </div>
+                            <h3 class="project-title" id="p-streamlit-title">Multi-API Chatbot & File Handler</h3>
+                            <p class="project-desc">
+                                Created Streamlit-based tools: a chat environment using Grok APIs and a document summaries agent. The file-handling agent processes PDFs, text archives, and layouts to extract semantic entities and build prompt summaries.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Streamlit</span>
+                                <span class="project-tag">Grok API</span>
+                                <span class="project-tag">PDF Extraction</span>
+                                <span class="project-tag">AI Summarization</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/phase3-streamlit/" class="project-link" id="p-streamlit-code-link"><i class="fa-brands fa-python"></i> Python Source</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Hand-Gesture Volume Controller -->
+                    <div class="project-card-container" data-category="edge" id="project-gesture-container">
+                        <div class="glass-card project-card">
+                            <div class="project-meta">
+                                <span>Computer Vision</span>
+                                <span>OpenCV Python</span>
+                            </div>
+                            <h3 class="project-title" id="p-gesture-title">CV Hand-Gesture Controller</h3>
+                            <p class="project-desc">
+                                A Python computer vision utility that maps camera-tracked hand shapes to native system volume controls. Uses MediaPipe palm tracking, low-pass filter smoothing for signal noise, and edge logical constraints.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">MediaPipe</span>
+                                <span class="project-tag">OpenCV</span>
+                                <span class="project-tag">Gesture Control</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com" class="project-link" id="p-gesture-code-link" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Simulation Lab -->
+        <section id="simulation">
+            <div class="container">
+                <span class="accent-text" id="sim-tag">Interactive Playground</span>
+                <h2 class="section-title" id="sim-section-title">Baseband Modulator Scope</h2>
+                <p class="section-subtitle" id="sim-section-subtitle">
+                    Select a modulation scheme, toggle the input controls, and analyze the modulated output wave and complex I-Q constellation cloud in real-time.
+                </p>
+
+                <div class="sim-grid glass-card" id="sim-card-dashboard">
+                    
+                    <!-- Scope display area -->
+                    <div class="sim-display-container" id="sim-scope-visual-panel">
+                        <div class="sim-header">
+                            <span class="sim-title" id="sim-scope-label">Digital Oscilloscope & Constellation</span>
+                            <div class="sim-status"><span class="status-dot"></span> Live Transceiver Stream</div>
+                        </div>
+                        <div class="sim-canvas-wrapper">
+                            <canvas id="sim-canvas" aria-label="Baseband Modulator Screen Displaying Waveforms and Constellations"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Scope Controls panel -->
+                    <div class="sim-controls-panel" id="sim-inputs-controls-panel">
+                        
+                        <!-- Modulation Selection -->
+                        <div class="control-group" id="group-modulation-type">
+                            <label>Modulation Scheme</label>
+                            <div class="scheme-selector" id="sim-scheme-selector">
+                                <button class="scheme-btn" data-scheme="bpsk" id="btn-mod-bpsk">BPSK</button>
+                                <button class="scheme-btn active" data-scheme="qpsk" id="btn-mod-qpsk">QPSK</button>
+                                <button class="scheme-btn" data-scheme="fm" id="btn-mod-fm">FM</button>
+                            </div>
+                        </div>
+
+                        <!-- Carrier Frequency -->
+                        <div class="control-group" id="group-carrier-freq">
+                            <label for="sim-freq">Carrier Frequency <span class="control-value" id="val-freq">8 Hz</span></label>
+                            <input type="range" id="sim-freq" class="slider-input" min="3" max="18" step="0.5" value="8">
+                        </div>
+
+                        <!-- Signal Amplitude -->
+                        <div class="control-group" id="group-signal-amp">
+                            <label for="sim-amp">Signal Amplitude <span class="control-value" id="val-amp">50 mV</span></label>
+                            <input type="range" id="sim-amp" class="slider-input" min="20" max="80" step="1" value="50">
+                        </div>
+
+                        <!-- AWGN Channel Noise -->
+                        <div class="control-group" id="group-channel-noise">
+                            <label for="sim-noise">Channel Noise (AWGN) <span class="control-value" id="val-noise">0.10</span></label>
+                            <input type="range" id="sim-noise" class="slider-input" min="0" max="0.7" step="0.02" value="0.1">
+                        </div>
+
+                        <!-- Explanation info box -->
+                        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; font-size: 0.85rem;" id="sim-info-textbox">
+                            <h4 style="color: #fff; margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-info" style="color: var(--primary);"></i> DSP Logic Note</h4>
+                            <p style="color: var(--text-muted); line-height: 1.4;">
+                                <strong>BPSK</strong> changes carrier phase by 180° for binary 1 and 0. <strong>QPSK</strong> encodes 2 bits per symbol, yielding 4 quadrants. <strong>FM</strong> shifts frequency in relation to a low-frequency modulator wave.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Timeline -->
+        <section id="timeline">
+            <div class="container">
+                <span class="accent-text" id="timeline-tag">Timeline</span>
+                <h2 class="section-title" id="timeline-title">Professional Journey</h2>
+                <p class="section-subtitle" id="timeline-subtitle">
+                    A roadmap of my education and internships as I bridge edge intelligence with systems engineering.
+                </p>
+
+                <div class="timeline" id="experience-timeline">
+                    
+                    <!-- Superior University -->
+                    <div class="timeline-item left" id="timeline-superior-uni">
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-date">2022 - 2026</div>
+                            <h3>BS Computer Science</h3>
+                            <div class="timeline-company">Superior University, Sargodha</div>
+                            <p>
+                                Academic concentration on algorithmic analysis, C++ structured computing, data structures, and machine learning. Achieved CGPA 3.4/4.0 (80.20% aggregate). Completed research in IRSTD optimization models.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Web Intern -->
+                    <div class="timeline-item right" id="timeline-web-intern">
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-date">Dec 2025 - Feb 2026</div>
+                            <h3>Junior Web Developer Intern</h3>
+                            <div class="timeline-company">Doxfen Company</div>
+                            <p>
+                                Developed responsive frontend templates and layouts using HTML5, CSS3, and JavaScript, contributing interface modules to the "Business Builder" workflow dashboard.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Design Intern -->
+                    <div class="timeline-item left" id="timeline-design-intern">
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-date">Aug 2025 - Oct 2025</div>
+                            <h3>Graphic Designer & Marketing Intern</h3>
+                            <div class="timeline-company">August Internships</div>
+                            <p>
+                                Created commercial graphics layouts, brand assets, vector icons, and typography packages using Adobe Photoshop, Illustrator, and Premiere Pro.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <span class="accent-text" id="contact-tag">Get In Touch</span>
+                <h2 class="section-title" id="contact-title">Start a Conversation</h2>
+                <p class="section-subtitle" id="contact-subtitle">
+                    Reach out for technical collaborations, research discussions, or embedded systems design opportunities.
+                </p>
+
+                <div class="contact-grid" id="contact-card-form-grid">
+                    
+                    <!-- Contact Cards details -->
+                    <div class="contact-info" id="contact-cards-container">
+                        
+                        <!-- Email -->
+                        <div class="contact-card glass-card" id="card-contact-email">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="contact-text">
+                                <h4>Email Address</h4>
+                                <p><a href="mailto:talhamazhar1711@gmail.com" style="color: inherit; text-decoration: none;">talhamazhar1711@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="contact-card glass-card" id="card-contact-phone">
+                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="contact-text">
+                                <h4>Phone Number</h4>
+                                <p>+92 336 7508375</p>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="contact-card glass-card" id="card-contact-location">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="contact-text">
+                                <h4>Office Location</h4>
+                                <p>Asad Park, Sargodha, Pakistan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form class="contact-form glass-card" id="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name">Full Name</label>
+                                <input type="text" id="form-name" class="form-input" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email Address</label>
+                                <input type="email" id="form-email" class="form-input" placeholder="name@domain.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-subject">Subject</label>
+                            <input type="text" id="form-subject" class="form-input" placeholder="Topic of discussion" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Detailed Message</label>
+                            <textarea id="form-message" class="form-input" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="btn-submit-message">Send Message</button>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+        <div class="container footer-content">
+            <a href="#" class="footer-logo" id="footer-logo-link">
+                <i class="fa-solid fa-microchip"></i> TALHA<span>.IO</span>
+            </a>
+            
+            <div class="footer-socials" id="social-links-bar">
+                <a href="mailto:talhamazhar1711@gmail.com" class="social-link" id="soc-email" aria-label="Send Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com" class="social-link" id="soc-github" target="_blank" aria-label="Visit Github"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" class="social-link" id="soc-linkedin" target="_blank" aria-label="Visit LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="copyright" id="copyright-text-label">
+            &copy; 2026 Muhammad Talha. All Rights Reserved. Built with Three.js & Modern Web Standards.
+        </div>
+    </footer>
+
+    <!-- Three.js Library Import -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Dragon Follower Code -->
+    <script src="js/dragon.js"></script>
+    
+    <!-- Main Script Core -->
+    <script src="js/main.js"></script>
+</body>
+</html>

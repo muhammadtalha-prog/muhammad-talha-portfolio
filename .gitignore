@@ -1,0 +1,17 @@
+# Compiled binaries and objects
+*.exe
+*.o
+*.obj
+*.out
+*.dll
+*.so
+
+# Python virtual environment and cache
+__pycache__/
+*.pyc
+venv/
+.env
+
+# System files
+.DS_Store
+Thumbs.db

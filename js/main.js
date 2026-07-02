@@ -211,16 +211,35 @@ function initBasebandSimulator() {
         // Draw grids
         drawGrids(ctx, width, height);
 
-        // Scope viewport boundaries (Left 65% is Scope, Right 35% is Constellation)
-        const scopeWidth = width * 0.65;
-        const constStartX = width * 0.65 + 10;
-        const constWidth = width * 0.35 - 20;
+        const isMobile = window.innerWidth <= 768;
+        
+        let scopeWidth, scopeHeight, constStartX, constStartY, constWidth, constHeight;
+        
+        if (isMobile) {
+            // Stacked layout (Scope top, Constellation bottom)
+            scopeWidth = width;
+            scopeHeight = height * 0.52;
+            
+            constStartX = 10;
+            constStartY = height * 0.52 + 10;
+            constWidth = width - 20;
+            constHeight = height * 0.48 - 20;
+        } else {
+            // Side-by-side layout
+            scopeWidth = width * 0.65;
+            scopeHeight = height;
+            
+            constStartX = width * 0.65 + 10;
+            constStartY = 15;
+            constWidth = width * 0.35 - 20;
+            constHeight = height - 30;
+        }
 
         // Run simulation equations and draw wave
-        drawScopeWave(ctx, scopeWidth, height, carrierFreq, signalAmp, noiseLevel);
+        drawScopeWave(ctx, scopeWidth, scopeHeight, carrierFreq, signalAmp, noiseLevel);
 
         // Draw constellation IQ plot
-        drawConstellation(ctx, constStartX, 15, constWidth, height - 30, noiseLevel);
+        drawConstellation(ctx, constStartX, constStartY, constWidth, constHeight, noiseLevel);
 
         // Animate horizontal wave drift
         timeOffset += 0.05;
@@ -240,11 +259,18 @@ function initBasebandSimulator() {
             c.stroke();
         }
 
-        // Scope vertical separators
+        // Scope separators
         c.strokeStyle = 'rgba(255,255,255,0.08)';
         c.beginPath();
-        c.moveTo(w * 0.65, 0);
-        c.lineTo(w * 0.65, h);
+        if (window.innerWidth <= 768) {
+            // Horizontal separator
+            c.moveTo(0, h * 0.52);
+            c.lineTo(w, h * 0.52);
+        } else {
+            // Vertical separator
+            c.moveTo(w * 0.65, 0);
+            c.lineTo(w * 0.65, h);
+        }
         c.stroke();
     }
 

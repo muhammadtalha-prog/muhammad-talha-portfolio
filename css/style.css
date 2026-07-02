@@ -1002,4 +1002,7 @@ footer {
     .form-row {
         grid-template-columns: 1fr;
     }
+    #sim-canvas {
+        height: 420px;
+    }
 }

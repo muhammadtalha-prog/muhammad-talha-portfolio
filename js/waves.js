@@ -40,7 +40,7 @@ function init3D() {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
     scene.add(ambientLight);
 
-    const pointLight = new THREE.PointLight(0x00f2fe, 2.0, 30);
+    const pointLight = new THREE.PointLight(0xff6b00, 2.0, 30);
     pointLight.position.set(0, 0, 8);
     scene.add(pointLight);
 
@@ -82,10 +82,10 @@ function createSignalGrid() {
             const posY = (y - gridHeight / 2) * spacing;
             positions.push(posX, posY, 0);
 
-            // Set color gradient (Teal at center, Purple at boundaries)
+            // Set color gradient (Orange at center, golden/red-orange at boundaries)
             const distFromCenter = Math.sqrt(posX*posX + posY*posY) / 20;
             const color = new THREE.Color();
-            color.setHSL(0.5 + Math.min(distFromCenter * 0.25, 0.3), 1.0, 0.55);
+            color.setHSL(0.04 + Math.min(distFromCenter * 0.06, 0.08), 1.0, 0.5);
             colors.push(color.r, color.g, color.b);
         }
     }
@@ -159,9 +159,9 @@ function createDataParticles() {
             0.01 + Math.random() * 0.03 // float upward
         );
 
-        // Neon teal/purple color mix
+        // Warm orange/yellow-orange color mix
         const color = new THREE.Color();
-        color.setHSL(Math.random() > 0.5 ? 0.52 : 0.76, 1.0, 0.6);
+        color.setHSL(Math.random() > 0.5 ? 0.06 : 0.12, 1.0, 0.6);
         colors.push(color.r, color.g, color.b);
     }
 

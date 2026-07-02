@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             setTimeout(() => {
                 submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                submitBtn.style.background = 'linear-gradient(135deg, #39ff14, #00f2fe)';
+                submitBtn.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
                 submitBtn.style.color = '#000';
                 contactForm.reset();
                 
@@ -126,6 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. Interactive Baseband Signal Modulator
     initBasebandSimulator();
+
+    // 6. Custom Animated Cursor
+    initCustomCursor();
 });
 
 function initBasebandSimulator() {
@@ -205,7 +208,7 @@ function initBasebandSimulator() {
         const height = canvas.height / (window.devicePixelRatio || 1);
         
         // Clear background
-        ctx.fillStyle = '#030508';
+        ctx.fillStyle = '#0A0A0A';
         ctx.fillRect(0, 0, width, height);
 
         // Draw grids
@@ -305,9 +308,9 @@ function initBasebandSimulator() {
         }
 
         // Generate and draw Waveform
-        c.strokeStyle = '#00f2fe';
+        c.strokeStyle = '#FF6B00';
         c.lineWidth = 2.5;
-        c.shadowColor = 'rgba(0, 242, 254, 0.4)';
+        c.shadowColor = 'rgba(255, 107, 0, 0.4)';
         c.shadowBlur = 8;
         c.beginPath();
 
@@ -403,7 +406,7 @@ function initBasebandSimulator() {
             );
         } else if (currentScheme === 'fm') {
             // FM sweeps continuous phase, draw circle outline
-            c.strokeStyle = 'rgba(0, 242, 254, 0.08)';
+            c.strokeStyle = 'rgba(255, 107, 0, 0.08)';
             c.lineWidth = 1;
             c.beginPath();
             c.arc(centerCX, centerCY, radius, 0, Math.PI * 2);
@@ -456,16 +459,16 @@ function initBasebandSimulator() {
         // Draw trailing decay points
         constellationHistory.forEach((pt, idx) => {
             const lifeRatio = idx / constellationHistory.length;
-            c.fillStyle = `rgba(118, 75, 162, ${lifeRatio * 0.45})`;
+            c.fillStyle = `rgba(255, 107, 0, ${lifeRatio * 0.45})`;
             c.beginPath();
             c.arc(pt.x, pt.y, 2.5, 0, Math.PI * 2);
             c.fill();
         });
 
         // Draw Active floating target crosshair
-        c.strokeStyle = '#39ff14';
+        c.strokeStyle = '#FFFFFF';
         c.lineWidth = 1.5;
-        c.shadowColor = 'rgba(57, 255, 20, 0.4)';
+        c.shadowColor = 'rgba(255, 255, 255, 0.4)';
         c.shadowBlur = 6;
         
         c.beginPath();
@@ -482,4 +485,69 @@ function initBasebandSimulator() {
 
     // Launch loop
     render();
+}
+
+function initCustomCursor() {
+    // Only initialize custom cursor on desktop/fine-pointer devices
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    // Create cursor elements
+    const dot = document.createElement('div');
+    const ring = document.createElement('div');
+    dot.className = 'custom-cursor-dot';
+    ring.className = 'custom-cursor-ring';
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+    let isMoving = false;
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!isMoving) {
+            ringX = mouseX;
+            ringY = mouseY;
+            isMoving = true;
+        }
+        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+    });
+
+    // Custom trailing outline (lerp logic)
+    function tick() {
+        if (isMoving) {
+            ringX += (mouseX - ringX) * 0.15;
+            ringY += (mouseY - ringY) * 0.15;
+            ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+        }
+        requestAnimationFrame(tick);
+    }
+    tick();
+
+    // Hover effect over interactive elements using event delegation
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.closest('a, button, select, input, textarea, .filter-btn, .scheme-btn, [role="button"]')) {
+            dot.classList.add('cursor-hover');
+            ring.classList.add('cursor-hover');
+        }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest('a, button, select, input, textarea, .filter-btn, .scheme-btn, [role="button"]')) {
+            dot.classList.remove('cursor-hover');
+            ring.classList.remove('cursor-hover');
+        }
+    });
+
+    // Hide custom cursor elements when cursor leaves the window bounds
+    document.addEventListener('mouseleave', () => {
+        dot.style.opacity = '0';
+        ring.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+        dot.style.opacity = '1';
+        ring.style.opacity = '1';
+    });
 }
